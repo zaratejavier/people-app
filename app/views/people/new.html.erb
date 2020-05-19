@@ -1,2 +1,21 @@
-<h1>People#new</h1>
-<p>Find me in app/views/people/new.html.erb</p>
+<h1>New Person</h1>
+
+<%= form_for @person do |f|%>
+  <%= f.label :first_Name%>
+  <%= f.text_field :first_name%>
+  <%= f.label :Last_Name%>
+  <%= f.text_field :last_name%>
+  <%= f.label :Age%>
+  <%= f.text_field :age%>
+  <%= f.label :Hair_Color%>
+  <%= f.text_field :hair_color%>
+  <%= f.label :eye_color%>
+  <%= f.text_field :eye_color%>
+  <%= f.label :gender%>
+  <%= f.text_field :gender%>
+  <%= f.label :alive%>
+  <%= f.text_field :alive%>
+  <%= f.submit%>
+<%end%>
+
+<%=link_to "Main Page", root_path	%>

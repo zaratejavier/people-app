@@ -7,6 +7,15 @@ class PeopleController < ApplicationController
     @person = Person.find(params[:id]) #may need to change based on how we want to show them
   end
 
+  def create
+    @person = Person.new(people_params)
+    if @person.save
+      redirect_to people_path
+    else
+      render :new
+    end
+  end
+
   def new
     @person = Person.new
   end
@@ -22,8 +31,8 @@ class PeopleController < ApplicationController
   end
 
   def update
-    @person = Person.find(params{:id})
-    if(@person.update(people_params))
+    @person = Person.find(params[:id])
+    if @person.update(people_params)
       redirect_to people_params #need to create this paramater
     else
       render :edit
