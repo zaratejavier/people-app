@@ -16,6 +16,7 @@ class PeopleController < ApplicationController
     end
   end
 
+
   def new
     @person = Person.new
   end
